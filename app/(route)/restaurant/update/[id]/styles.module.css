@@ -1,0 +1,13 @@
+.submit-grid {
+  text-align: center;
+}
+
+.submit {
+  width: 50%;
+  font-size: 1.125rem;
+}
+
+.rated {
+  border: none;
+  background: transparent;
+}

@@ -1,0 +1,11 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading {
+  /* calc(100% - 룰렛 width - 여백) */
+  width: calc(100% - 500px - 36px);
+  text-align: center;
+}

@@ -1,0 +1,27 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* max-width: var(--max-width-pc); */
+  margin-right: auto;
+  margin-left: auto;
+  background: #f8edeb;
+  border-radius: var(--border-radius);
+}
+
+.logo {
+  height: 40px;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+}
+
+.link-active {
+  border-bottom: 4px solid #ffb5a7;
+  font-weight: bold;
+}

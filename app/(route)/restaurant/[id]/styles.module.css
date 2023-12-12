@@ -1,0 +1,9 @@
+.contents label {
+  font-size: 0.875rem;
+}
+
+.description {
+  min-height: 300px;
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+}
