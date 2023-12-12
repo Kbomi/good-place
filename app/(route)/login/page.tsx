@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
-import { signIn } from "next-auth/react";
+// import { signIn } from "next-auth/react";
 import { TLoginData } from "@/app/api/login/route";
 
 export default function SignUp() {
@@ -13,20 +13,21 @@ export default function SignUp() {
   const { register, handleSubmit } = useForm<TLoginData>();
 
   const onSubmitHandler = async (data: TLoginData) => {
-    await signIn("credentials", {
-      userId: data.userId,
-      password: data.password,
-      redirect: false,
-    })
-      .then((result) => {
-        console.log("signIn result:", result);
-        if (result?.ok) {
-          router.push(result.url ?? "/");
-        }
-      })
-      .catch((error) => {
-        console.log("signIn error:", error);
-      });
+    // TODO: 로그인 api
+    // await signIn("credentials", {
+    //   userId: data.userId,
+    //   password: data.password,
+    //   redirect: false,
+    // })
+    //   .then((result) => {
+    //     console.log("signIn result:", result);
+    //     if (result?.ok) {
+    //       router.push(result.url ?? "/");
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.log("signIn error:", error);
+    //   });
   };
 
   return (

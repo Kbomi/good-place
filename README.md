@@ -17,3 +17,5 @@ pnpm dev
 # or
 bun dev
 ```
+
+로컬: [http://localhost:1004](http://localhost:1004)

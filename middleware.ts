@@ -41,20 +41,16 @@
 //   matcher: [...withAuthList, ...withOutAuthList],
 // };
 
-// export async function middleware(req: NextRequest) {
-//   const auth = req.cookies.get("Authroization")?.value || "";
-
-//   const requestHeaders = new Headers(req.headers);
-//   requestHeaders.set("Authroization", auth);
-
-//   const token = await getToken({ req });
-//   const { searchParams } = req.nextUrl;
-//   const callbackUrl = searchParams.get("callbackUrl");
-//   const pathname = req.nextUrl.pathname;
-
-//   const isWithAuth = withAuthList.includes(pathname);
-//   const isWithOutAuth = withOutAuthList.includes(pathname);
-
-//   if (isWithAuth) return withAuth(req, !!token);
-//   if (isWithOutAuth) return withOutAuth(req, !!token, callbackUrl);
-// }
+export async function middleware(req: NextRequest) {
+  // const auth = req.cookies.get("Authroization")?.value || "";
+  // const requestHeaders = new Headers(req.headers);
+  // requestHeaders.set("Authroization", auth);
+  // const token = await getToken({ req });
+  // const { searchParams } = req.nextUrl;
+  // const callbackUrl = searchParams.get("callbackUrl");
+  // const pathname = req.nextUrl.pathname;
+  // const isWithAuth = withAuthList.includes(pathname);
+  // const isWithOutAuth = withOutAuthList.includes(pathname);
+  // if (isWithAuth) return withAuth(req, !!token);
+  // if (isWithOutAuth) return withOutAuth(req, !!token, callbackUrl);
+}

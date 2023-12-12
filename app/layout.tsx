@@ -4,6 +4,10 @@ import "./globals.css";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./_components/theme";
 
+// import { getServerSession } from "next-auth";
+// import AuthProvider from "@/context/SessionProvider";
+// import Authroization from "@/context/Authorization";
+
 const notoSansKr = Noto_Sans_KR({
   preload: false,
   weight: ["100", "400", "700", "900"], // 가변 폰트가 아닌 경우, 사용할 fontWeight 배열
@@ -23,6 +27,12 @@ export default async function RootLayout({
     <html>
       <ThemeProvider theme={theme}>
         <body className={`${notoSansKr.className}`}>
+          {/* <AuthProvider>
+            <Authroization>
+              {children}
+              <div id="modal"></div>
+            </Authroization>
+          </AuthProvider> */}
           {children}
           <div id="modal"></div>
         </body>
