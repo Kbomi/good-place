@@ -1,0 +1,79 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Organization {
+  id    Int   @id @default(autoincrement())
+  name    String
+  businessNumber    String    @unique
+  users User[]
+  restaurant   Restaurant[]
+  meet   Meet[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+enum UserPosition {
+  EMPLOYEE // 사원
+  ASSISTANT_MANAGER // 대리
+  MANAGER // 과장
+  DIRECTOR // 차장
+  EXECUTIVE_DIRECTOR // 부장
+  CEO // 대표
+}
+
+model User {
+  id      Int      @id @default(autoincrement())
+  email   String   @unique
+  userId   String   @unique
+  name    String?
+  role    UserRole     @default(USER)
+  position    UserPosition    @default(EMPLOYEE)
+  organization   Organization   @relation(fields: [organizationId], references: [id])
+  organizationId Int
+  restaurant   Restaurant[]
+  meetsParticipated Meet[] @relation("MeetParticipants")  // 사용자가 참여한 모임
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Restaurant {
+  id    Int          @id @default(autoincrement())
+  name    String
+  latitude    String
+  longitude   String
+  zipCode   String
+  address   String
+  user    User    @relation(fields: [userId], references: [id])
+  userId    Int
+  organization    Organization @relation(fields: [organizationId], references: [id])
+  organizationId  Int
+  meet   Meet[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Meet {
+  id    Int          @id @default(autoincrement())
+  title   String
+  content   String
+  userLimit   Int
+  positionLimit   UserPosition
+  participants      User[]     @relation("MeetParticipants")
+  restaurant        Restaurant @relation(fields: [restaurantId], references: [id])
+  restaurantId      Int
+  organization    Organization @relation(fields: [organizationId], references: [id])
+  organizationId  Int
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
