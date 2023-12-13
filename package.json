@@ -2,6 +2,9 @@
   "name": "eat-lunch",
   "version": "0.1.0",
   "private": true,
+  "prisma": {
+    "seed": "node prisma/seed.mjs"
+  },
   "scripts": {
     "dev": "next dev -p 1004",
     "build": "next build",
@@ -14,6 +17,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.18",
     "@mui/material": "^5.14.18",
+    "@prisma/client": "^5.7.0",
     "@tinymce/tinymce-react": "^4.3.2",
     "mysql2": "^3.6.5",
     "next": "14.0.2",
@@ -29,6 +33,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.0.2",
+    "prisma": "^5.7.0",
     "typescript": "^5.3.2"
   }
 }

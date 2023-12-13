@@ -6,16 +6,36 @@
 
 점심먹자 프로젝트에 이 고민을 위한 기능을 구현했습니다.
 
+## 로컬 백엔드 세팅
+
+prisma migrate
+
+```bash
+npx prisma migrate dev --name init
+```
+
+prisma db push
+
+```bash
+npx prisma db push
+```
+
+시드 데이터 추가
+
+```bash
+npx prisma db seed
+```
+
+prisma studio를 열어서 확인할 수 있습니다.
+
+```bash
+npx prisma studio
+```
+
 ## 프론트 실행
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 로컬: [http://localhost:1004](http://localhost:1004)
